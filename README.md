@@ -1,5 +1,5 @@
 # Movie Search App in React
-Search thousands of movies
+Search through thousands of movies.
 
 ## React + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

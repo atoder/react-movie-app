@@ -34,7 +34,7 @@ const App = () => {
       }
 
       const data = await response.json();
-      
+
       // Correctly set the movie list using the 'results' property from TMDB
       setMovieList(data.results || []);
 
@@ -63,19 +63,19 @@ const App = () => {
         <section className="all-movies">
           <h2>All Movies</h2>
           {isLoading ? (
-            <p className="text">Loading...</p>
+            <p className="text-white">Loading...</p>
           ) : errorMessage ? (
-            <p className="text-red-500">{errorMessage}</p>
-          ) : (
-            <ul>
-              {/* Using implicit return () and adding the required `key` prop */}
-              {movieList.map((movie) => (
-                <li key={movie.id}>
-                  <p className="text-white">{movie.title}</p>
-                </li>
-              ))}
-            </ul>
-          )}
+              <p className="text-red-500">{errorMessage}</p>
+            ) : (
+                <ul>
+                  {/* Using implicit return () and adding the required `key` prop */}
+                  {movieList.map((movie) => (
+                    <li key={movie.id}>
+                      <p className="text-white">{movie.title}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
         </section>
       </div>
     </main>

@@ -1,6 +1,12 @@
 # Movie Search App in React
 Search through thousands of movies.
 
+## Setup .env.local
+Add your TMDB Api key to file .env.local
+```
+VITE_TMDB_API_KEY=
+```
+
 ## React + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

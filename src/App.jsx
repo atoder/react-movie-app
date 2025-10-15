@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Search from './components/Search.jsx';
 import Spinner from './components/Spinner.jsx'
+import MovieCard from './components/MovieCard.jsx';
 
 // API constants defined at the top level of the module
 const API_BASE_URL = 'https://api.themoviedb.org/3';
@@ -62,7 +63,7 @@ const App = () => {
         </header>
 
         <section className="all-movies">
-          <h2>All Movies</h2>
+          <h2 className="mt-[40px]">All Movies</h2>
           {isLoading ? (
             <Spinner />
           ) : errorMessage ? (
@@ -71,9 +72,7 @@ const App = () => {
                 <ul>
                   {/* Using implicit return () and adding the required `key` prop */}
                   {movieList.map((movie) => (
-                    <li key={movie.id}>
-                      <p className="text-white">{movie.title}</p>
-                    </li>
+                    <MovieCard key={movie.id} movie={movie}/>
                   ))}
                 </ul>
               )}

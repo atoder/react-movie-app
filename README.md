@@ -3,8 +3,17 @@ Search through thousands of movies.
 
 ## Setup .env.local
 Add your TMDB Api key to file .env.local
+Add your appwrite.io project id
+Add your appwrite.io DB id
+Add your appwrite.io collection id
+Add your appwrite.io endpoint - can be region based but usually 'https://cloud.appwrite.io/v1'
+
 ```
 VITE_TMDB_API_KEY=
+VITE_APPWRITE_PROJECT_ID=
+VITE_APPWRITE_DATABASE_ID=
+VITE_APPWRITE_COLLECTION_ID=
+VITE_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
 ```
 
 ## React + Vite

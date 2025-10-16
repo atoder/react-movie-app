@@ -3,6 +3,7 @@ import Search from './components/Search.jsx';
 import Spinner from './components/Spinner.jsx'
 import MovieCard from './components/MovieCard.jsx';
 import { useDebounce } from 'react-use';
+import { updateSearchCount } from './appwrite.js'
 
 // API constants defined at the top level of the module
 const API_BASE_URL = 'https://api.themoviedb.org/3';
@@ -46,6 +47,9 @@ const App = () => {
 
       // Correctly set the movie list using the 'results' property from TMDB
       setMovieList(data.results || []);
+      if (query && data.results.length > 0) {
+        await updateSearchCount(query, data.results[0]);
+      }
 
     } catch (error) {
       console.error(`Error fetching movies: ${error}`);
